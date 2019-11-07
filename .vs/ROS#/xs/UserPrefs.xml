@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{469A0C04-8455-87E2-0DBC-78F60A2511F9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RosSharp/Scripts/Urdf/Editor/UrdfComponents/UrdfRobotExtensions.cs">
+    <Files>
+      <File FileName="Assets/RosSharp/Scripts/Urdf/Editor/UrdfComponents/UrdfGeometry.cs" Line="317" Column="1" />
+      <File FileName="Assets/RosSharp/Scripts/Urdf/Editor/AssetHandlers/UrdfMeshExportHandler.cs" Line="100" Column="1" />
+      <File FileName="Assets/RosSharp/Scripts/Urdf/Editor/UrdfComponents/UrdfRobotExtensions.cs" Line="118" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

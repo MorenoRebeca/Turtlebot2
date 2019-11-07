@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robot name="Robot">
+  <material name="Default-Material">
+    <color rgba="1 1 1 1" />
+  </material>
+  <material name="material2">
+    <color rgba="0.9057 0.787 0.1922 1" />
+  </material>
+  <material name="material">
+    <color rgba="0.1698 0.0072 0.0072 1" />
+  </material>
+  <material name="Default-Diffuse">
+    <color rgba="1 1 1 0.5" />
+  </material>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.025000000372529" ixy="0" ixz="0" iyy="0.025000000372529" iyz="0" izz="0.025000000372529" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.25" />
+      </geometry>
+      <material name="Default-Material" />
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.25" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arms">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+  <link name="right_arms">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.236 -0.295 0" />
+      <mass value="1" />
+      <inertia ixx="0.0034884437918663" ixy="0" ixz="0" iyy="0.000920980994123966" iyz="0.00125223700888455" izz="0.00287768291309476" />
+    </inertial>
+    <visual>
+      <origin rpy="-2.024582 0 0" xyz="-0.236 -0.295 0" />
+      <geometry>
+        <cylinder length="0.2" radius="0.025" />
+      </geometry>
+      <material name="Default-Material" />
+    </visual>
+    <collision>
+      <origin rpy="-2.024582 0 0" xyz="-0.236 -0.295 0" />
+      <geometry>
+        <cylinder length="0.2" radius="0.025" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.0325103104114532" ixy="0" ixz="0" iyy="0.0626206174492836" iyz="0" izz="0.0325103104114532" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/polia beca v8.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+      <material name="Default-Diffuse" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://meshes/polia beca v8.stl" scale="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="" type="fixed">
+    <parent link="base_link" />
+    <child link="arms" />
+  </joint>
+  <joint name="" type="revolute">
+    <origin xyz="0.247 0 0" />
+    <parent link="arms" />
+    <child link="right_arms" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-0.523599" upper="0.523599" effort="1000" velocity="1000" />
+  </joint>
+  <joint name="" type="prismatic">
+    <origin xyz="0 0 0.655" />
+    <parent link="base_link" />
+    <child link="head" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0" upper="0" effort="1000" velocity="1000" />
+  </joint>
+</robot>

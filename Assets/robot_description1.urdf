@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robot name="Turtle">
+  <material name="Default-Diffuse">
+    <color rgba="1 1 1 0.5" />
+  </material>
+  <material name="Default-Material">
+    <color rgba="1 1 1 1" />
+  </material>
+  <link name="Turtlebot3 Burguer base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.662482 0.148023 73.768364" />
+      <mass value="1" />
+      <inertia ixx="2871.39013671875" ixy="4.08307600021362" ixz="20.8976573944092" iyy="2892.998046875" iyz="1.31817615032196" izz="2346.15673828125" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 6" />
+      <geometry>
+        <mesh filename="package://meshes/burger_base.stl" scale="1 1 1" />
+      </geometry>
+      <material name="Default-Diffuse" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 6" />
+      <geometry>
+        <mesh filename="package://meshes/burger_base.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lds">
+    <inertial>
+      <origin rpy="0 0 0" xyz="9.555538 0.000341 168.706299" />
+      <mass value="1" />
+      <inertia ixx="361.990325927734" ixy="0.201351374387741" ixz="62.9129753112793" iyy="606.960815429688" iyz="-0.169811517000198" izz="784.193359375" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 178" />
+      <geometry>
+        <mesh filename="package://meshes/lds.stl" scale="1 1 1" />
+      </geometry>
+      <material name="Default-Diffuse" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 178" />
+      <geometry>
+        <mesh filename="package://meshes/lds.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_tire">
+    <inertial>
+      <origin rpy="0 0 0" xyz="36.304241 82.73645 27.393206" />
+      <mass value="1" />
+      <inertia ixx="281.54345703125" ixy="0" ixz="0" iyy="510.670135498047" iyz="-0.00024414059589617" izz="280.7607421875" />
+    </inertial>
+    <visual>
+      <origin rpy="-1.570796 0 0" xyz="36.304241 82.73645 27.393206" />
+      <geometry>
+        <cylinder length="17.60128" radius="32.099998" />
+      </geometry>
+      <material name="Default-Material" />
+    </visual>
+    <collision>
+      <origin rpy="-1.570796 0 0" xyz="36.304241 82.73645 27.393206" />
+      <geometry>
+        <cylinder length="17.60128" radius="32.099998" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_tire">
+    <inertial>
+      <origin rpy="0 0 0" xyz="36.200005 -83.000008 27.6" />
+      <mass value="1" />
+      <inertia ixx="279.947265625" ixy="-0.00048828125" ixz="0" iyy="508.270782470703" iyz="-0.00024414065410383" izz="279.9482421875" />
+    </inertial>
+    <visual>
+      <origin rpy="-1.570796 0 0" xyz="36.200001 -83 27.6" />
+      <geometry>
+        <cylinder length="17.6" radius="32" />
+      </geometry>
+      <material name="Default-Material" />
+    </visual>
+    <collision>
+      <origin rpy="-1.570796 0 0" xyz="36.200001 -83 27.6" />
+      <geometry>
+        <cylinder length="17.6" radius="32" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="" type="fixed">
+    <parent link="Turtlebot3 Burguer base" />
+    <child link="lds" />
+  </joint>
+  <joint name="" type="fixed">
+    <parent link="Turtlebot3 Burguer base" />
+    <child link="right_tire" />
+  </joint>
+  <joint name="" type="fixed">
+    <parent link="Turtlebot3 Burguer base" />
+    <child link="left_tire" />
+  </joint>
+</robot>
